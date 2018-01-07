@@ -25,8 +25,15 @@ const route = require('./routes/heroRoutes');
 //adding middleware
 app.use(cors());
 
-//body-parser
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 app.use(bordyparser.json());
+app.use(bordyparser.urlencoded({'extended':'true'}));
 
 
 //add routes

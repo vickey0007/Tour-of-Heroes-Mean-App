@@ -7,7 +7,6 @@ var HeroSchema = new Schema({
   },
   id: {
     type: String,
-    required: true,
     unique: true,
   }
 });
